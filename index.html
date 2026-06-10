@@ -6,87 +6,16 @@
   </head>
   <body>
     <h1>GitHubの使い方メモ</h1>
+    <p>自分用のリファレンスサイトです。</p>
 
-    <h2>GitHubとは何か</h2>
-    <p>コードやファイルをインターネット上で管理・共有できるサービス。</p>
-    <ol>
-      <li>ファイルの変更履歴を記録できる（いつ・何を変えたか残る）</li>
-      <li>過去の状態に戻せる</li>
-      <li>他の人と共同作業ができる</li>
-      <li>作ったものを無料で公開できる（GitHub Pages）</li>
-    </ol>
-    <h2>最初の設定</h2>
-    <p>GitHubを使い始める前に一度だけやる設定。</p>
-    <ol>
-      <li>GitHub（github.com）でアカウントを作る</li>
-      <li>
-        自分のPCにGitをインストールする<br>
-        Windowsの場合：git-scm.com からインストーラーをダウンロードして実行する（よくある、このアプリがPCに変更を与えてもよろしいですか、の奴）
-      </li>
-      <li>
-        ターミナルで名前とメールアドレスを登録する
-        <pre><code>
-          git config --global user.name "あなたの名前"
-          git config --global user.email "あなたのメールアドレス"
-          （この2つは、GitHubの設定と同じである必要がある）</code></pre>
-      </li>
-      <li>
-        SSHキーを作ってGitHubに登録する（パスワード不要で接続できるようになる）
-        <pre><code>
-          ssh-keygen -t ed25519 -C "あなたのメールアドレス"
-        </code></pre>
-        生成された公開キーをGitHubの Settings → SSH keys に貼り付ける
-      </li>
-    </ol>
-    
-    <h2>よく使う操作</h2>
-    <p>日常的に使うGitのコマンド一覧。</p>
-    <ol>
-      <li>
-        リポジトリをクローンする（ダウンロードしてくる）
-        <pre><code>git clone リポジトリのURL</code></pre>
-      </li>
-      <li>
-        変更したファイルを記録対象に追加する
-        <pre><code>git add ファイル名</code></pre>
-      </li>
-      <li>
-        変更内容を確定（コミット）する
-        <pre><code>git commit -m "変更内容のメモ"</code></pre>
-      </li>
-      <li>
-        GitHubに送信（プッシュ）する
-        <pre><code>git push</code></pre>
-      </li>
-      <li>
-        GitHubから最新の状態を取得（プル）する
-        <pre><code>git pull</code></pre>
-      </li>
-    </ol>
-    <h2>各種操作の意味</h2>
-    <p>Gitの用語と操作が何を意味しているかの整理。</p>
-    <ol>
-      <li><b>リポジトリ</b>：ファイルと変更履歴をまとめた保管場所</li>
-      <li><b>クローン</b>：GitHubにあるリポジトリを自分のPCにコピーすること</li>
-      <li><b>add</b>：「次のコミットにこのファイルを含める」と指定すること</li>
-      <li><b>コミット</b>：変更内容にメモをつけて確定・記録すること</li>
-      <li><b>プッシュ</b>：自分のPCの記録をGitHubに送ること</li>
-      <li><b>プル</b>：GitHubの最新状態を自分のPCに取り込むこと</li>
-      <li><b>ブランチ</b>：本体に影響を与えずに作業できる分岐した作業スペース</li>
-    </ol>
-    <h2>GitHubの見方</h2>
-    <p>GitHubのリポジトリページで確認できる主な情報。</p>
-    <ol>
-      <li><b>Code タブ</b>：ファイル一覧と最新のコードが見える</li>
-      <li><b>Issues タブ</b>：バグ報告や改善要望を管理する場所</li>
-      <li><b>Pull requests タブ</b>：変更をレビューしてもらい本体に取り込む仕組み</li>
-      <li><b>Actions タブ</b>：自動テストや自動デプロイの実行履歴</li>
-      <li><b>Settings タブ</b>：リポジトリの設定（GitHub Pagesの設定もここ）</li>
-      <li><b>コミット履歴</b>：Codeタブの時計アイコンから、誰がいつ何を変えたか確認できる</li>
-    </ol>
     <h2>ページ一覧</h2>
     <ul>
+      <li><a href="github-basics.html">GitHubの基本（とは・設定・よく使う操作・用語）</a></li>
+      <li><a href="github-ui.html">GitHubサイトの見方</a></li>
       <li><a href="cursor-to-pages.html">CursorからGitHub Pages公開までの流れ</a></li>
+      <li><a href="html-guide.html">HTMLの書き方まとめ</a></li>
+      <li><a href="shortcuts.html">便利なショートカット一覧</a></li>
+      <li><a href="css-guide.html">CSSについて</a></li>
     </ul>
   </body>
 </html>

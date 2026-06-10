@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>HTMLの書き方まとめ - GitHubの使い方メモ</title>
+  </head>
+  <body>
+    <h1>HTMLの書き方まとめ</h1>
+    <p><a href="index.html">← トップに戻る</a></p>
+
+    <h2>HTMLとは</h2>
+    <p>Webページの「構造と内容」を書くための言語。文章の見出し・段落・リンクなどを、タグと呼ばれる記号で表現する。</p>
+
+    <h2>基本的な構造</h2>
+    <p>HTMLファイルは必ずこの形から始まる。</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;ページのタイトル&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ここに内容を書く
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <ul>
+      <li><b>&lt;!DOCTYPE html&gt;</b>：「これはHTMLファイルです」という宣言</li>
+      <li><b>&lt;html lang="ja"&gt;</b>：ページ全体を囲むタグ。lang="ja"は日本語であることを示す</li>
+      <li><b>&lt;head&gt;</b>：ブラウザへの設定情報を書く場所（画面には表示されない）</li>
+      <li><b>&lt;body&gt;</b>：実際にブラウザに表示される内容を書く場所</li>
+    </ul>
+
+    <h2>タグの書き方</h2>
+    <p>タグは「開始タグ」と「終了タグ」でコンテンツを挟む形が基本。</p>
+    <pre><code>&lt;p&gt;ここが内容&lt;/p&gt;</code></pre>
+    <p>終了タグはスラッシュ（/）がつく。</p>
+
+    <h2>よく使うタグ一覧</h2>
+
+    <h3>見出し</h3>
+    <p>h1〜h6まであり、数字が大きいほど小さい見出しになる。</p>
+    <pre><code>&lt;h1&gt;大見出し&lt;/h1&gt;
+&lt;h2&gt;中見出し&lt;/h2&gt;
+&lt;h3&gt;小見出し&lt;/h3&gt;</code></pre>
+
+    <h3>段落</h3>
+    <pre><code>&lt;p&gt;ここに文章を書く。&lt;/p&gt;</code></pre>
+
+    <h3>リンク</h3>
+    <p>href属性（= リンク先のURL）を指定する。</p>
+    <pre><code>&lt;a href="https://github.com"&gt;GitHubへ&lt;/a&gt;</code></pre>
+    <p>同じサイト内の別ページに飛ぶ場合はファイル名だけでよい。</p>
+    <pre><code>&lt;a href="index.html"&gt;トップに戻る&lt;/a&gt;</code></pre>
+
+    <h3>箇条書きリスト（順序なし）</h3>
+    <pre><code>&lt;ul&gt;
+  &lt;li&gt;項目1&lt;/li&gt;
+  &lt;li&gt;項目2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+    <h3>番号つきリスト（順序あり）</h3>
+    <pre><code>&lt;ol&gt;
+  &lt;li&gt;手順1&lt;/li&gt;
+  &lt;li&gt;手順2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+    <h3>太字・強調</h3>
+    <pre><code>&lt;b&gt;太字にしたい文字&lt;/b&gt;</code></pre>
+
+    <h3>コードの表示</h3>
+    <p>コードを表示するときは pre と code を組み合わせて使う。preはスペースや改行をそのまま表示し、codeはコンピュータ用の文字であることを示す。</p>
+    <pre><code>&lt;pre&gt;&lt;code&gt;git commit -m "メッセージ"&lt;/code&gt;&lt;/pre&gt;</code></pre>
+
+    <h3>画像</h3>
+    <p>src属性に画像ファイルのパス、alt属性に画像が表示できないときの代替テキストを書く。終了タグは不要。</p>
+    <pre><code>&lt;img src="image.png" alt="画像の説明"&gt;</code></pre>
+
+    <h2>属性とは</h2>
+    <p>タグに追加情報を渡すためのもの。開始タグの中に <b>属性名="値"</b> の形で書く。</p>
+    <pre><code>&lt;a href="index.html" target="_blank"&gt;新しいタブで開く&lt;/a&gt;</code></pre>
+    <p>上の例では href と target が属性。target="_blank" は「新しいタブで開く」という意味。</p>
+  </body>
+</html>
