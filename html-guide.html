@@ -25,8 +25,10 @@
 &lt;/html&gt;</code></pre>
     <ul>
       <li><b>&lt;!DOCTYPE html&gt;</b>：「これはHTMLファイルです」という宣言</li>
-      <li><b>&lt;html lang="ja"&gt;</b>：ページ全体を囲むタグ。lang="ja"は日本語であることを示す</li>
+      <li><b>&lt;html lang="ja"&gt;</b>：ページ全体を囲むタグ。lang="ja"は日本語であることを示す。英語なら"en"になる</li>
       <li><b>&lt;head&gt;</b>：ブラウザへの設定情報を書く場所（画面には表示されない）</li>
+      <li><b>&lt;meta charset="UTF-8"&gt;</b>：文字コードをUTF-8にする。これを書かないと日本語が文字化けする。</li>
+      <li><b>&lt;title&gt;</b>：タブの名前（タブに表示する文）であって、ブラウザ内に表示されるわけではない。 
       <li><b>&lt;body&gt;</b>：実際にブラウザに表示される内容を書く場所</li>
     </ul>
 
@@ -49,8 +51,20 @@
     <h3>リンク</h3>
     <p>href属性（= リンク先のURL）を指定する。</p>
     <pre><code>&lt;a href="https://github.com"&gt;GitHubへ&lt;/a&gt;</code></pre>
+    <a href="https://github.com">GitHubへ</a>
     <p>同じサイト内の別ページに飛ぶ場合はファイル名だけでよい。</p>
     <pre><code>&lt;a href="index.html"&gt;トップに戻る&lt;/a&gt;</code></pre>
+    <a href="index.html">トップに戻る</a>
+    <p>フォルダを跨いだリンクは、フォルダ名からファイル名までを指定する。</p>
+    <pre><code>&lt;a href="./html_css/index.html"&gt;トップに戻る&lt;/a&gt;</code></pre>
+    <a href="./html_css/index.html">トップに戻る</a>
+
+    <p>target属性を使うと、リンクを新しいタブで開くことができる。</p>
+    <pre><code>&lt;a href="index.html" target="_blank"&gt;新しいタブで開く&lt;/a&gt;</code></pre>
+    <a href="index.html" target="_blank">新しいタブで開く</a>
+    <p>rel属性を使うと、リンクの種類を指定できる。noopener noreferrerは、リンクを開いたときにセキュリティを強化するためのもの。</p>
+    <pre><code>&lt;a href="index.html" rel="noopener noreferrer"&gt;トップに戻る&lt;/a&gt;</code></pre>
+    <a href="index.html" rel="noopener noreferrer">トップに戻る</a>
 
     <h3>箇条書きリスト（順序なし）</h3>
     <pre><code>&lt;ul&gt;
@@ -58,11 +72,20 @@
   &lt;li&gt;項目2&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
+<ul>
+  <li>項目1</li>
+  <li>項目2</li>
+</ul>
+
     <h3>番号つきリスト（順序あり）</h3>
     <pre><code>&lt;ol&gt;
   &lt;li&gt;手順1&lt;/li&gt;
   &lt;li&gt;手順2&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
+<ol>
+  <li>手順1</li> 
+  <li>手順2</li>
+</ol>
 
     <h3>太字・強調</h3>
     <pre><code>&lt;b&gt;太字にしたい文字&lt;/b&gt;</code></pre>
@@ -70,6 +93,44 @@
     <h3>コードの表示</h3>
     <p>コードを表示するときは pre と code を組み合わせて使う。preはスペースや改行をそのまま表示し、codeはコンピュータ用の文字であることを示す。</p>
     <pre><code>&lt;pre&gt;&lt;code&gt;git commit -m "メッセージ"&lt;/code&gt;&lt;/pre&gt;</code></pre>
+    <pre><code>git commit -m "メッセージ"</code></pre>
+
+    <h3>特殊文字（&amp; から始まる書き方）</h3>
+    <p>
+      HTMLでは <code>&lt;</code> や <code>&gt;</code> などの記号は
+      特別な意味を持つため、そのまま書くとタグだと解釈されてしまう。
+      これらを「文字として」表示したいときは、
+      <code>&amp;</code> で始まり <code>;</code> で終わる
+      「文字参照」という書き方を使う。
+    </p>
+    
+    <table border="1">
+      <tr>
+        <th>書き方</th>
+        <th>表示される文字</th>
+        <th>意味</th>
+      </tr>
+      <tr>
+        <td><code>&amp;lt;</code></td>
+        <td>&lt;</td>
+        <td>小なり（タグの開始記号）</td>
+      </tr>
+      <tr>
+        <td><code>&amp;gt;</code></td>
+        <td>&gt;</td>
+        <td>大なり（タグの終了記号）</td>
+      </tr>
+      <tr>
+        <td><code>&amp;amp;</code></td>
+        <td>&amp;</td>
+        <td>アンド記号</td>
+      </tr>
+      <tr>
+        <td><code>&amp;quot;</code></td>
+        <td>&quot;</td>
+        <td>ダブルクォート</td>
+      </tr>
+    </table>
 
     <h3>画像</h3>
     <p>src属性に画像ファイルのパス、alt属性に画像が表示できないときの代替テキストを書く。終了タグは不要。</p>

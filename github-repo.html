@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>GitHubリポジトリの見方 - GitHubの使い方メモ</title>
+  </head>
+  <body>
+    <h1>GitHubリポジトリの見方</h1>
+    <p><a href="index.html">← トップに戻る</a></p>
+
+    <h2>リポジトリページの各タブ</h2>
+    <p>GitHubのリポジトリページで確認できる主な情報。</p>
+    <ol>
+      <li><b>Code タブ</b>：ファイル一覧と最新のコードが見える</li>
+      <li><b>Issues タブ</b>：バグ報告や改善要望を管理する場所、TO DOリストとかもここに作る</li>
+      <li><b>Pull requests タブ</b>：変更をレビューしてもらい本体に取り込む仕組み</li>
+      <li><b>Actions タブ</b>：自動テストや自動デプロイの実行履歴</li>
+      <li><b>Settings タブ</b>：リポジトリの設定（GitHub Pagesの設定もここ）</li>
+      <li><b>コミット履歴</b>：Codeタブの時計アイコンから、誰がいつ何を変えたか確認できる</li>
+    </ol>
+
+    <h2>READMEとは</h2>
+    <p>リポジトリの「説明書」として、Codeページを開いたときにファイル一覧の下に自動で表示されるファイル。
+      ファイル名は <b>README.md</b>（大文字）で、リポジトリのトップに置く。</p>
+    <p>プロジェクトの概要・使い方・作者情報などを書くのが一般的。
+      GitHubでリポジトリを作ると「Add a README」ボタンが表示されるのはこれを作るため。</p>
+
+    <h3>READMEの追加方法</h3>
+    <ol>
+      <li>GitHubのリポジトリページで「Add a README」ボタンを押す</li>
+      <li>内容を入力して、ページ右上の「Commit changes」ボタンを押す</li>
+      <li>Codeページに戻ると、ファイル一覧の下にREADMEの内容が表示される</li>
+    </ol>
+    <p>ローカル（自分のPC）に README.md を作って push する方法でも同じ結果になる。</p>
+
+    <h2>リポジトリをクローン（ダウンロード）する</h2>
+    <p>クローンとは、GitHubにあるリポジトリを自分のPCにコピーしてくること。</p>
+
+    <h3>SSHのURLを使ったクローン手順</h3>
+    <ol>
+      <li>GitHubのリポジトリページで緑色の「Code」ボタンを押す</li>
+      <li>「Local」タブの中の「SSH」を選ぶ</li>
+      <li>表示されたURL（git@github.com:ユーザー名/リポジトリ名.git）をコピーする</li>
+      <li>ターミナルで以下のコマンドを実行する
+        <pre><code>git clone git@github.com:ユーザー名/リポジトリ名.git</code></pre>
+      </li>
+    </ol>
+    <p>SSHを使うには事前にSSHキーの設定が必要。設定方法は<a href="github-basics.html">GitHubの基本</a>ページを参照。</p>
+  </body>
+</html>
