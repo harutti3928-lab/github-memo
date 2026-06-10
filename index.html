@@ -21,19 +21,24 @@
       <li>GitHub（github.com）でアカウントを作る</li>
       <li>
         自分のPCにGitをインストールする<br>
-        Windowsの場合：git-scm.com からインストーラーをダウンロードして実行する
+        Windowsの場合：git-scm.com からインストーラーをダウンロードして実行する（よくある、このアプリがPCに変更を与えてもよろしいですか、の奴）
       </li>
       <li>
         ターミナルで名前とメールアドレスを登録する
-        <pre><code>git config --global user.name "あなたの名前"
-git config --global user.email "あなたのメールアドレス"</code></pre>
+        <pre><code>
+          git config --global user.name "あなたの名前"
+          git config --global user.email "あなたのメールアドレス"
+          （この2つは、GitHubの設定と同じである必要がある）</code></pre>
       </li>
       <li>
         SSHキーを作ってGitHubに登録する（パスワード不要で接続できるようになる）
-        <pre><code>ssh-keygen -t ed25519 -C "あなたのメールアドレス"</code></pre>
+        <pre><code>
+          ssh-keygen -t ed25519 -C "あなたのメールアドレス"
+        </code></pre>
         生成された公開キーをGitHubの Settings → SSH keys に貼り付ける
       </li>
     </ol>
+    
     <h2>よく使う操作</h2>
     <p>日常的に使うGitのコマンド一覧。</p>
     <ol>
