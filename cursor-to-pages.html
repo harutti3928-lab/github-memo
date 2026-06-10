@@ -52,5 +52,57 @@
         <p>暫く経つと、URLが表示されるので、サイトが公開されていることを確認する。</p>
       </li>
     </ol>
+    
+    <h2>Terminalを使ってfirst pushする方法</h2>
+    <p>GUIのボタンではなく、ターミナルにコマンドを打って公開する方法。
+      やっていることは上のGUIの手順と同じで、対応するコマンドを自分で打つ点だけが違う。</p>
+
+    <ol>
+      <li>
+        <h3>リポジトリを初期化する</h3>
+        <pre><code>git init</code></pre>
+        <p>フォルダ内に.gitが作られ、Git管理が始まる。GUIの「リポジトリを初期化」と同じ。</p>
+      </li>
+
+      <li>
+        <h3>ファイルをステージする</h3>
+        <pre><code>git add index.html</code></pre>
+        <p>コミットに含めるファイルを選ぶ。すべての変更をまとめてステージしたいときは
+          <b>git add .</b>（ドット）と書くと、フォルダ内の全ファイルが対象になる。</p>
+      </li>
+
+      <li>
+        <h3>コミットする</h3>
+        <pre><code>git commit -m "1st commit"</code></pre>
+        <p>ステージした内容を、メッセージ付きで記録する。</p>
+      </li>
+
+      <li>
+        <h3>GitHubに空のリポジトリを作る</h3>
+        <p>ブラウザでGitHubを開き、「New repository」から同名のリポジトリを作る。
+          このとき<b>READMEなどの初期ファイルは追加しない</b>（空のまま作る）。
+          手元にすでにコミットがあるので、両方にファイルがあるとぶつかってしまうため。</p>
+      </li>
+
+      <li>
+        <h3>リモート（送り先）を紐付ける</h3>
+        <pre><code>git remote add origin https://github.com/ユーザー名/リポジトリ名.git</code></pre>
+        <p>手元のリポジトリ（ローカル）と、GitHub上のリポジトリ（リモート）をつなぐ。
+          originは送り先につけるあだ名。リポジトリ作成後にGitHubが表示してくれるコマンドをコピーすればよい。</p>
+      </li>
+
+      <li>
+        <h3>ブランチ名をmainにする</h3>
+        <pre><code>git branch -M main</code></pre>
+        <p>初期のブランチ名がmasterになっている場合があるので、GitHubの標準であるmainに変更する。</p>
+      </li>
+
+      <li>
+        <h3>プッシュする</h3>
+        <pre><code>git push -u origin main</code></pre>
+        <p>originのmainに向けて送信する。-uを付けると次回以降は<b>git push</b>だけで送れるようになる。</p>
+      </li>
+    </ol>
+
   </body>
 </html>
